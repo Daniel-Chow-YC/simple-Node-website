@@ -9,4 +9,5 @@ A simple informational site with a Node.js back end.
 <br>
 
 To run:
-- ``node index.js``
+- ``node index.js`` or
+- ``npm start``
