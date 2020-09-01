@@ -3,6 +3,17 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// middleware example
+const myLogger = function(req, res, next) {
+    console.log("Request IP: " + req.ip);
+    console.log("Request Method: " + req.method);
+    console.log("Request date: " + new Date());  
+    next(); // THIS IS IMPORTANT!
+  }
+  
+app.use(myLogger)
+  
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 });
